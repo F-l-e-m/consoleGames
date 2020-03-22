@@ -2,4 +2,11 @@
 
 ``` npm i ```
 
+Для запуска brain-even используйте команду: 
 ``` node bin/brain-even.js ```
+
+Для запуска brain-games используйте команду: 
+``` node bin/brain-games.js ```
+
+Для запуска brain-calc используйте команду: 
+``` node bin/brain-calc.js ```
