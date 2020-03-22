@@ -16,3 +16,6 @@
 
 Для запуска brain-progression используйте команду: 
 ``` node bin/brain-progression.js ```
+
+Для запуска brain-prime используйте команду: 
+``` node bin/brain-prime.js ```
