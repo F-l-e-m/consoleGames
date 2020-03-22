@@ -97,6 +97,31 @@ const runCalcGame = (steps = 0, description) => {
   return checkSteps === 0 ? console.log(`Congratulations, ${name}`) : console.log(console.log(`Let's try again, ${name}!`));
 };
 
+const searchGcd = (num1, num2) => (num1 !== 0 ? searchGcd(num2 % num1, num1) : num2);
+
+const runGcd = (steps = 0, description) => {
+  if (steps <= 0) console.log('Min steps = 1');
+  const name = welcomeMessage();
+  console.log(description);
+  let checkSteps = steps;
+
+  while (checkSteps !== 0) {
+    const num = Math.round(Math.random() * 10);
+    const num2 = Math.round(Math.random() * 10);
+    console.log(`Question: ${num} ${num2}`);
+    const nod = searchGcd(num, num2);
+    const userAnswer = Number(readlineSync.question('Your answer: '));
+    if (userAnswer === nod) {
+      console.log('Correct!');
+      checkSteps -= 1;
+    } else {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${nod}`);
+      break;
+    }
+  }
+  return checkSteps === 0 ? console.log(`Congratulations, ${name}`) : console.log(console.log(`Let's try again, ${name}!`));
+};
+
 export const initGame = (typeGame) => {
   switch (typeGame) {
     case 'brainGame':
@@ -108,8 +133,12 @@ export const initGame = (typeGame) => {
     case 'brainCalc':
       runCalcGame(3, 'What is the result of the expression?');
       break;
+    case 'brainGcd':
+      runGcd(3, 'Find the greatest common divisor of given numbers.');
+      break;
     default:
       console.log('Ошибка');
+      break;
   }
 };
 

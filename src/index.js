@@ -11,3 +11,7 @@ export const brainEven = () => {
 export const brainCalc = () => {
   initGame('brainCalc');
 };
+
+export const brainGcd = () => {
+  initGame('brainGcd');
+}

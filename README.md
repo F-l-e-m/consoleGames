@@ -10,3 +10,6 @@
 
 Для запуска brain-calc используйте команду: 
 ``` node bin/brain-calc.js ```
+
+Для запуска brain-gcd используйте команду: 
+``` node bin/brain-gcd.js ```
