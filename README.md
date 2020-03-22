@@ -13,3 +13,6 @@
 
 Для запуска brain-gcd используйте команду: 
 ``` node bin/brain-gcd.js ```
+
+Для запуска brain-progression используйте команду: 
+``` node bin/brain-progression.js ```

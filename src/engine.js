@@ -122,6 +122,44 @@ const runGcd = (steps = 0, description) => {
   return checkSteps === 0 ? console.log(`Congratulations, ${name}`) : console.log(console.log(`Let's try again, ${name}!`));
 };
 
+const buildProgressionList = (progressionLength) => {
+  const progressionList = [];
+  const stepProgression = Math.round(Math.random() * 10);
+  const firstStep = Math.round(Math.random() * 100);
+  let numberInProgressionList = firstStep;
+  for (let i = progressionLength; i > 0; i -= 1) {
+    numberInProgressionList += stepProgression;
+    progressionList.push(numberInProgressionList);
+  }
+  return progressionList;
+};
+
+const hideRandomNumberInList = (list) => {
+  const randomHideNumPosition = Math.round(Math.random() * list.length);
+  return Number(list.splice(randomHideNumPosition, 1, '..').join(''));
+};
+
+const runProgression = (steps = 0, description) => {
+  if (steps <= 0) console.log('Min steps = 1');
+  const name = welcomeMessage();
+  console.log(description);
+  let checkSteps = steps;
+  while (checkSteps !== 0) {
+    const progressionList = buildProgressionList(10);
+    const hideNumber = hideRandomNumberInList(progressionList);
+    console.log(`Question: ${progressionList.join(' ')}`);
+    const userAnswer = Number(readlineSync.question('Your answer: '));
+    if (userAnswer === hideNumber) {
+      console.log('Correct!');
+      checkSteps -= 1;
+    } else {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hideNumber}`);
+      break;
+    }
+  }
+  return checkSteps === 0 ? console.log(`Congratulations, ${name}`) : console.log(console.log(`Let's try again, ${name}!`));
+};
+
 export const initGame = (typeGame) => {
   switch (typeGame) {
     case 'brainGame':
@@ -135,6 +173,9 @@ export const initGame = (typeGame) => {
       break;
     case 'brainGcd':
       runGcd(3, 'Find the greatest common divisor of given numbers.');
+      break;
+    case 'brainProgression':
+      runProgression(3, 'What number is missing in the progression?');
       break;
     default:
       console.log('Ошибка');
