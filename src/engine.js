@@ -125,8 +125,7 @@ const runGcd = (steps = 0, description) => {
 const buildProgressionList = (progressionLength) => {
   const progressionList = [];
   const stepProgression = Math.round(Math.random() * 10);
-  const firstStep = Math.round(Math.random() * 100);
-  let numberInProgressionList = firstStep;
+  let numberInProgressionList = Math.round(Math.random() * 100);
   for (let i = progressionLength; i > 0; i -= 1) {
     numberInProgressionList += stepProgression;
     progressionList.push(numberInProgressionList);
@@ -160,6 +159,47 @@ const runProgression = (steps = 0, description) => {
   return checkSteps === 0 ? console.log(`Congratulations, ${name}`) : console.log(console.log(`Let's try again, ${name}!`));
 };
 
+const isPrime = (num) => {
+  let i = 2;
+  const limit = Math.sqrt(num);
+  while (i <= limit) {
+    if (num % i === 0) {
+      return false;
+    }
+    i += 1;
+  }
+  return true;
+};
+
+const runPrimeGame = (steps = 0, description) => {
+  if (steps <= 0) console.log('Min steps = 1');
+  const name = welcomeMessage();
+  console.log(description);
+  let checkSteps = steps;
+  while (checkSteps !== 0) {
+    const number = Math.round(Math.random() * 100);
+    console.log(`Question: ${number}`);
+    console.log(isPrime(number));
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (isPrime(number)) {
+      if (userAnswer === 'yes') {
+        console.log('Correct!');
+        checkSteps -= 1;
+      } else {
+        console.log(`${userAnswer} is wrong answer ;(. Correct answer was no`);
+        break;
+      }
+    } else if (userAnswer === 'no') {
+      console.log('Correct!');
+      checkSteps -= 1;
+    } else {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was no`);
+      break;
+    }
+  }
+  return checkSteps === 0 ? console.log(`Congratulations, ${name}`) : console.log(console.log(`Let's try again, ${name}!`));
+};
+
 export const initGame = (typeGame) => {
   switch (typeGame) {
     case 'brainGame':
@@ -176,6 +216,9 @@ export const initGame = (typeGame) => {
       break;
     case 'brainProgression':
       runProgression(3, 'What number is missing in the progression?');
+      break;
+    case 'brainPrime':
+      runPrimeGame(3, 'Answer "yes" if given number is prime. Otherwise answer "no".');
       break;
     default:
       console.log('Ошибка');
