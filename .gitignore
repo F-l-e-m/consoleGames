@@ -1,2 +1,4 @@
 /node_modules
 .idea
+
+install_nvm.sh

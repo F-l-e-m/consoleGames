@@ -1,3 +1,6 @@
-import { brainPrime } from '../src/index.js';
+#!/usr/bin/env node
+import brainPrime from '../src/games/brain-prime.js';
+import initGame from '../src/engine.js';
 
-brainPrime();
+initGame(brainPrime, 'Answer "yes" if the number is even, otherwise answer "no"');
+

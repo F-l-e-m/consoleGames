@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { brainProgression } from '../src/index.js';
+import brainProgression from '../src/games/brain-progression.js';
+import initGame from '../src/engine.js';
 
-brainProgression();
+initGame(brainProgression, 'Answer "yes" if the number is even, otherwise answer "no"');
