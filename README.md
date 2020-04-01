@@ -3,20 +3,18 @@
 
 ``` npm i ```
 
-Для запуска brain-even используйте команду: 
-``` node bin/brain-even.js ```
+brain-even:
+[![asciicast](https://asciinema.org/a/tQxtvHQg3MpsHGeuMvvhvYB4v.svg)](https://asciinema.org/a/tQxtvHQg3MpsHGeuMvvhvYB4v)
 
-Для запуска brain-games используйте команду: 
-``` node bin/brain-games.js ```
 
-Для запуска brain-calc используйте команду: 
-``` node bin/brain-calc.js ```
+brain-calc: 
+[![asciicast](https://asciinema.org/a/d7YFeduLybtIeXDHG3opsz431.svg)](https://asciinema.org/a/d7YFeduLybtIeXDHG3opsz431)
 
-Для запуска brain-gcd используйте команду: 
-``` node bin/brain-gcd.js ```
+brain-gcd: 
+[![asciicast](https://asciinema.org/a/QcXNByyxbxi7V8UezvIENWQp9.svg)](https://asciinema.org/a/QcXNByyxbxi7V8UezvIENWQp9)
 
-Для запуска brain-progression используйте команду: 
-``` node bin/brain-progression.js ```
+brain-progression: 
+[![asciicast](https://asciinema.org/a/qqcEDafKWhCfZ04IdQdZgiMWN.svg)](https://asciinema.org/a/qqcEDafKWhCfZ04IdQdZgiMWN)
 
-Для запуска brain-prime используйте команду: 
-``` node bin/brain-prime.js ```
+brain-prime: 
+[![asciicast](https://asciinema.org/a/tSN8K3GwjpoVDpkmD1DK8kWyw.svg)](https://asciinema.org/a/tSN8K3GwjpoVDpkmD1DK8kWyw)
