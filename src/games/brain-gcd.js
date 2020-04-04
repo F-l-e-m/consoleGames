@@ -1,5 +1,9 @@
 import readlineSync from 'readline-sync';
 
+const initRandomNum = (maxValue) => Math.round(Math.random() * maxValue);
+
+const searchGcd = (num1, num2) => (num1 !== 0 ? searchGcd(num2 % num1, num1) : num2);
+
 const brainGcd = () => {
   let isSuccess = true;
   const num = initRandomNum(10);
@@ -15,9 +19,5 @@ const brainGcd = () => {
   }
   return isSuccess;
 };
-
-const initRandomNum = (maxValue) => Math.round(Math.random() * maxValue);
-
-const searchGcd = (num1, num2) => (num1 !== 0 ? searchGcd(num2 % num1, num1) : num2);
 
 export default brainGcd;

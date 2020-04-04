@@ -1,24 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const brainCalc = () => {
-  const operations = getOperations();
-  let isSuccess = true;
-  const num = initRandomNum(10);
-  const num2 = initRandomNum(10);
-  const randomOperation = buildRandomOperation();
-  const question = `${String(num)} ${operations[randomOperation]} ${String(num2)}`;
-  console.log(`Question: ${question}`);
-  const systemAnswer = calc(num, num2, operations[randomOperation]);
-  const userAnswer = Number(readlineSync.question('Your answer: '));
-  if (userAnswer === systemAnswer) {
-    console.log('Correct!');
-  } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${systemAnswer}`);
-    isSuccess = false;
-  }
-  return isSuccess;
-};
-
 const buildRandomOperation = () => Math.floor(0 + Math.random() * (2 + 1 - 0));
 
 const initRandomNum = (maxValue) => Math.round(Math.random() * maxValue);
@@ -42,6 +23,25 @@ const calc = (num1, num2, operation) => {
       break;
   }
   return result;
+};
+
+const brainCalc = () => {
+  const operations = getOperations();
+  let isSuccess = true;
+  const num = initRandomNum(10);
+  const num2 = initRandomNum(10);
+  const randomOperation = buildRandomOperation();
+  const question = `${String(num)} ${operations[randomOperation]} ${String(num2)}`;
+  console.log(`Question: ${question}`);
+  const systemAnswer = calc(num, num2, operations[randomOperation]);
+  const userAnswer = Number(readlineSync.question('Your answer: '));
+  if (userAnswer === systemAnswer) {
+    console.log('Correct!');
+  } else {
+    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${systemAnswer}`);
+    isSuccess = false;
+  }
+  return isSuccess;
 };
 
 export default brainCalc;
