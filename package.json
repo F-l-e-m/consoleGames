@@ -1,7 +1,7 @@
 {
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
-  "description": "",
+  "description": "projects with mini console games",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -15,8 +15,11 @@
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "games",
+    "console"
+  ],
+  "author": "Flem",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/F-l-e-m/frontend-project-lvl1/issues"
@@ -29,5 +32,8 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1"
+  },
+  "engines": {
+    "node": ">= 13.10.0"
   }
 }
