@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
+import { initRandomNum } from '../utils.js';
 
 const buildRandomOperation = () => Math.floor(0 + Math.random() * (2 + 1 - 0));
-
-const initRandomNum = (maxValue) => Math.round(Math.random() * maxValue);
 
 const getOperations = () => ['+', '-', '*'];
 

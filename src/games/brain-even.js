@@ -1,7 +1,8 @@
 import readlineSync from 'readline-sync';
+import { initRandomNum } from '../utils.js';
 
 const brainEven = () => {
-  const num = Math.round(Math.random() * 100);
+  const num = initRandomNum(100);
   console.log(`Question: ${num}`);
   const answer = readlineSync.question('Your answer: ');
   let isSuccess = true;

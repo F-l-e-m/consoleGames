@@ -1,0 +1,1 @@
+export const initRandomNum = (maxValue) => Math.round(Math.random() * maxValue);

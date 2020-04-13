@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
-
-const initRandomNum = (maxValue) => Math.round(Math.random() * maxValue);
+import { initRandomNum } from '../utils.js';
 
 const searchGcd = (num1, num2) => (num1 !== 0 ? searchGcd(num2 % num1, num1) : num2);
 
