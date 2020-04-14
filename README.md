@@ -4,17 +4,17 @@
 ``` npm i ```
 
 brain-even:
-[![asciicast](https://asciinema.org/a/tQxtvHQg3MpsHGeuMvvhvYB4v.svg)](https://asciinema.org/a/tQxtvHQg3MpsHGeuMvvhvYB4v)
+[![asciicast](https://asciinema.org/a/d2RRU0g84IH6zFT303qeLw1jJ.svg)](https://asciinema.org/a/d2RRU0g84IH6zFT303qeLw1jJ)
 
 
 brain-calc: 
-[![asciicast](https://asciinema.org/a/d7YFeduLybtIeXDHG3opsz431.svg)](https://asciinema.org/a/d7YFeduLybtIeXDHG3opsz431)
+[![asciicast](https://asciinema.org/a/X3RYIWncCXqCE2PQqLxJa0jTa.svg)](https://asciinema.org/a/X3RYIWncCXqCE2PQqLxJa0jTa)
 
 brain-gcd: 
-[![asciicast](https://asciinema.org/a/QcXNByyxbxi7V8UezvIENWQp9.svg)](https://asciinema.org/a/QcXNByyxbxi7V8UezvIENWQp9)
+[![asciicast](https://asciinema.org/a/RDTiTvOFmtVgOF8rtzy0ziHQi.svg)](https://asciinema.org/a/RDTiTvOFmtVgOF8rtzy0ziHQi)
 
 brain-progression: 
-[![asciicast](https://asciinema.org/a/qqcEDafKWhCfZ04IdQdZgiMWN.svg)](https://asciinema.org/a/qqcEDafKWhCfZ04IdQdZgiMWN)
+[![asciicast](https://asciinema.org/a/z2Nb69ysT2hgGnG0aTVOCjxIG.svg)](https://asciinema.org/a/z2Nb69ysT2hgGnG0aTVOCjxIG)
 
 brain-prime: 
-[![asciicast](https://asciinema.org/a/tSN8K3GwjpoVDpkmD1DK8kWyw.svg)](https://asciinema.org/a/tSN8K3GwjpoVDpkmD1DK8kWyw)
+[![asciicast](https://asciinema.org/a/WopVeSqWRGLfyk7Qy3DJg85Eh.svg)](https://asciinema.org/a/WopVeSqWRGLfyk7Qy3DJg85Eh)
