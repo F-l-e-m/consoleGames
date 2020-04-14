@@ -53,5 +53,3 @@ export const startBrainProgression = () => {
 export const startBrainPrime = () => {
   initGame(brainPrime, gameConditions.brainGcd);
 };
-
-export default initGame;
