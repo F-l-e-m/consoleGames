@@ -16,22 +16,25 @@ const isPrime = (num) => {
 const brainPrime = () => {
   let isSuccess = true;
   const number = initRandomNum(100);
+  let serverAnswer = '';
   console.log(`Question: ${number}`);
   const userAnswer = readlineSync.question('Your answer: ');
   if (isPrime(number)) {
-    if (userAnswer === 'yes') {
-      console.log('Correct!');
-    } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was no`);
+    if (userAnswer !== 'yes') {
+      serverAnswer = 'yes';
       isSuccess = false;
     }
-  } else if (userAnswer === 'no') {
-    console.log('Correct!');
   } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was no`);
-    isSuccess = false;
+    if (userAnswer !== 'no') {
+      serverAnswer = 'no';
+      isSuccess = false;
+    }
   }
-  return isSuccess;
+  return {
+    userAnswer: userAnswer,
+    correctAnswer: serverAnswer,
+    isSuccess: isSuccess
+  };
 };
 
 export default brainPrime;

@@ -10,13 +10,12 @@ const brainGcd = () => {
   console.log(`Question: ${num} ${num2}`);
   const nod = searchGcd(num, num2);
   const userAnswer = Number(readlineSync.question('Your answer: '));
-  if (userAnswer === nod) {
-    console.log('Correct!');
-  } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${nod}`);
-    isSuccess = false;
-  }
-  return isSuccess;
+  if (userAnswer !== nod) isSuccess = false;
+  return {
+    userAnswer: userAnswer,
+    correctAnswer: nod,
+    isSuccess: isSuccess
+  };
 };
 
 export default brainGcd;

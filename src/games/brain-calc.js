@@ -32,15 +32,14 @@ const brainCalc = () => {
   const randomOperation = buildRandomOperation();
   const question = `${String(num)} ${operations[randomOperation]} ${String(num2)}`;
   console.log(`Question: ${question}`);
-  const systemAnswer = calc(num, num2, operations[randomOperation]);
+  const serverAnswer = calc(num, num2, operations[randomOperation]);
   const userAnswer = Number(readlineSync.question('Your answer: '));
-  if (userAnswer === systemAnswer) {
-    console.log('Correct!');
-  } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${systemAnswer}`);
-    isSuccess = false;
-  }
-  return isSuccess;
+  if (userAnswer !== serverAnswer) isSuccess = false;
+  return {
+    userAnswer: userAnswer,
+    correctAnswer: serverAnswer,
+    isSuccess: isSuccess
+  };
 };
 
 export default brainCalc;

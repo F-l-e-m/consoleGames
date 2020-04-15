@@ -18,17 +18,20 @@ const hideRandomNumberInList = (list) => {
 
 const brainProgression = () => {
   let isSuccess = true;
+  let serverAnswer = '';
   const progressionList = buildProgressionList(10);
   const hideNumber = hideRandomNumberInList(progressionList);
   console.log(`Question: ${progressionList.join(' ')}`);
   const userAnswer = Number(readlineSync.question('Your answer: '));
-  if (userAnswer === hideNumber) {
-    console.log('Correct!');
-  } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hideNumber}`);
+  if (userAnswer !== hideNumber) {
+    serverAnswer = hideNumber;
     isSuccess = false;
   }
-  return isSuccess;
+  return {
+    userAnswer: userAnswer,
+    correctAnswer: serverAnswer,
+    isSuccess: isSuccess
+  };
 };
 
 export default brainProgression;

@@ -18,8 +18,11 @@ const runGame = (game, name, step = 3) => {
     console.log(`Congratulations, ${name}`);
     return;
   }
-  const isSuccess = game();
-  if (!isSuccess) {
+  const data = game();
+  if(data.isSuccess) {
+    console.log('Correct!');
+  } else {
+    console.log(`"${data.userAnswer}" is wrong answer ;(. Correct answer was "${data.correctAnswer}"`);
     console.log(`Let's try again, ${name}!`);
     return;
   }
