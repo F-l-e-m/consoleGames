@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
+import { initRandomNum } from '../utils.js';
 
 const buildProgressionList = (progressionLength) => {
   const progressionList = [];
-  const stepProgression = Math.round(Math.random() * 10);
-  let numberInProgressionList = Math.round(Math.random() * 100);
+  const stepProgression = initRandomNum(10);
+  let numberInProgressionList = initRandomNum(100);
   for (let i = progressionLength; i > 0; i -= 1) {
     numberInProgressionList += stepProgression;
     progressionList.push(numberInProgressionList);
@@ -19,7 +20,8 @@ const hideRandomNumberInList = (list) => {
 const brainProgression = () => {
   let isSuccess = true;
   let serverAnswer = '';
-  const progressionList = buildProgressionList(10);
+  const progressionLength = 10;
+  const progressionList = buildProgressionList(progressionLength);
   const hideNumber = hideRandomNumberInList(progressionList);
   console.log(`Question: ${progressionList.join(' ')}`);
   const userAnswer = Number(readlineSync.question('Your answer: '));
