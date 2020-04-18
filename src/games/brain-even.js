@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
 import initGame from '../engine.js';
+import { initAnswer } from '../engine.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 
@@ -8,9 +9,8 @@ const brainEven = () => {
   const num = initRandomNum(100);
   let isSuccess = true;
   let serverAnswer = '';
-  console.log(`Question: ${num}`);
-  const answer = readlineSync.question('Your answer: ');
-  if(answer !== 'no' || answer !== 'yes') {
+  const answer = initAnswer(num);
+  if(answer !== 'no' && answer !== 'yes') {
     serverAnswer = 'yes or no'
     isSuccess = false
   };

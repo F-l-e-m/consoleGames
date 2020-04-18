@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
 import initGame from '../engine.js';
+import { initAnswer } from '../engine.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -20,8 +21,7 @@ const brainPrime = () => {
   let isSuccess = true;
   const number = initRandomNum(100);
   let serverAnswer = '';
-  console.log(`Question: ${number}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = initAnswer(number);
   if (isPrime(number)) {
     if (userAnswer !== 'yes') {
       serverAnswer = 'yes';

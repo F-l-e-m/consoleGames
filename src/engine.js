@@ -24,4 +24,10 @@ const initGame = (game, description, step = 3) => {
   runGame(game, name, step);
 };
 
+export const initAnswer = (data) => {
+  console.log(`Question: ${data}`);
+  const answer = readlineSync.question('Your answer: ');
+  return answer;
+};
+
 export default initGame;

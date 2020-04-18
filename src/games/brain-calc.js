@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
 import initGame from '../engine.js';
+import { initAnswer } from '../engine.js';
 
 const buildRandomOperation = () => Math.floor(0 + Math.random() * (2 + 1 - 0));
 const description = 'What is the result of the expression?';
@@ -32,9 +33,8 @@ const brainCalc = () => {
   const num2 = initRandomNum(10);
   const randomOperation = buildRandomOperation();
   const question = `${String(num)} ${operations[randomOperation]} ${String(num2)}`;
-  console.log(`Question: ${question}`);
   const serverAnswer = calc(num, num2, operations[randomOperation]);
-  const userAnswer = Number(readlineSync.question('Your answer: '));
+  const userAnswer = Number(initAnswer(question));
   if (userAnswer !== serverAnswer) isSuccess = false;
   return {
     userAnswer: userAnswer,

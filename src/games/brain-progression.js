@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
 import initGame from '../engine.js';
+import { initAnswer } from '../engine.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -26,8 +27,7 @@ const brainProgression = () => {
   const progressionLength = 10;
   const progressionList = buildProgressionList(progressionLength);
   const hideNumber = hideRandomNumberInList(progressionList);
-  console.log(`Question: ${progressionList.join(' ')}`);
-  const userAnswer = Number(readlineSync.question('Your answer: '));
+  const userAnswer = Number(initAnswer(progressionList.join(' ')));
   if (userAnswer !== hideNumber) {
     serverAnswer = hideNumber;
     isSuccess = false;
