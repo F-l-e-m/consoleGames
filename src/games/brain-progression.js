@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
+import initGame from '../engine.js';
+
+const description = 'What number is missing in the progression?';
 
 const buildProgressionList = (progressionLength) => {
   const progressionList = [];
@@ -36,4 +39,8 @@ const brainProgression = () => {
   };
 };
 
-export default brainProgression;
+const run = () => {
+  initGame(brainProgression, description);
+}
+
+export default run;

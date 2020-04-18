@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
+import initGame from '../engine.js';
 
 const buildRandomOperation = () => Math.floor(0 + Math.random() * (2 + 1 - 0));
-
+const description = 'What is the result of the expression?';
 const getOperations = () => ['+', '-', '*'];
 
 const calc = (num1, num2, operation) => {
@@ -42,4 +43,8 @@ const brainCalc = () => {
   };
 };
 
-export default brainCalc;
+const run = () => {
+  initGame(brainCalc, description);
+}
+
+export default run;

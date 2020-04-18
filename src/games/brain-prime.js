@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
+import initGame from '../engine.js';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   let i = 2;
@@ -37,4 +40,8 @@ const brainPrime = () => {
   };
 };
 
-export default brainPrime;
+const run = () => {
+  initGame(brainPrime, description);
+}
+
+export default run;

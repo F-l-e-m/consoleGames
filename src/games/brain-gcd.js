@@ -1,7 +1,9 @@
 import readlineSync from 'readline-sync';
 import { initRandomNum } from '../utils.js';
+import initGame from '../engine.js';
 
 const searchGcd = (num1, num2) => (num1 !== 0 ? searchGcd(num2 % num1, num1) : num2);
+const description = 'Find the greatest common divisor of given numbers.';
 
 const brainGcd = () => {
   let isSuccess = true;
@@ -18,4 +20,8 @@ const brainGcd = () => {
   };
 };
 
-export default brainGcd;
+const run = () => {
+  initGame(brainGcd, description);
+}
+
+export default run;
